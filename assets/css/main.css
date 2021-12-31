@@ -203,12 +203,20 @@ input, select, textarea {
 		@media screen and (max-width: 1680px) {
 
 			.container {
-				width: 1200px;
+				width: 1000px; /* my addition: make smaller*/
+			}
+
+			.container .blog-width {
+				width: 1000px;
 			}
 
 		}
 
 		@media screen and (max-width: 1280px) {
+
+			.container.blog-width {
+				width: 900px;
+			}
 
 			.container {
 				width: 960px;
@@ -2634,6 +2642,11 @@ input, select, textarea {
 
 			#main-wrapper, #footer-wrapper {
 				padding: 40px 30px 40px 30px;
+			}
+
+			/* my addition */
+			#main-wrapper .blog-width {
+				padding: 40px 60px 40px 60px;
 			}
 
 		/* Logo */
