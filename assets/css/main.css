@@ -2693,3 +2693,49 @@ input, select, textarea {
 			}
 
 	}
+
+/* Blog */
+#blog-title {
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+#blog-title h2 {
+	margin-bottom: 0.5em;
+}
+
+#blog-content p {
+	margin-bottom: 0.5em;
+	text-indent:40px;
+}
+
+#blog-content .column {
+  float: left;
+  width: 50%;
+}
+
+#blog-content .column-3 {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+#blog-content .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#blog-content ul {
+	list-style-position: inside;
+}
+
+.blog-image {
+	height: auto;
+	text-align: center;
+	padding: 15px;
+}
+
+.blog-image img {
+	max-width:70%;
+}
