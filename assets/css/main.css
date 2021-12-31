@@ -203,20 +203,12 @@ input, select, textarea {
 		@media screen and (max-width: 1680px) {
 
 			.container {
-				width: 1000px; /* my addition: make smaller*/
-			}
-
-			.container .blog-width {
-				width: 1000px;
+				width: 1200px; /* my addition: make smaller*/
 			}
 
 		}
 
 		@media screen and (max-width: 1280px) {
-
-			.container.blog-width {
-				width: 900px;
-			}
 
 			.container {
 				width: 960px;
@@ -239,6 +231,47 @@ input, select, textarea {
 			}
 
 		}
+
+
+		/* Blog Container - my addition */
+
+			.blog-container {
+				margin: 0 auto;
+				max-width: 100%;
+				width: 1400px;
+			}
+
+				@media screen and (max-width: 1680px) {
+
+					.blog-container {
+						width: 1000px; /* my addition: make smaller*/
+					}
+
+				}
+
+				@media screen and (max-width: 1280px) {
+
+					.blog-container {
+						width: 960px;
+					}
+
+				}
+
+				@media screen and (max-width: 980px) {
+
+					.blog-container {
+						width: 90%;
+					}
+
+				}
+
+				@media screen and (max-width: 736px) {
+
+					.blog-container {
+						width: 100%;
+					}
+
+				}
 
 /* Row */
 
