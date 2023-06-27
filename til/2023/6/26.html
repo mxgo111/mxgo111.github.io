@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Today I Learned
+		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" href="https://mxgo111.github.io/css/main.css">
+		<link rel="stylesheet" href="https://mxgo111.github.io/css/sidebar.css">
+		<link rel="stylesheet" href="https://mxgo111.github.io/css/tex.css">
+		<link rel=icon href="https://mxgo111.github.io/favicon.ico">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		</script>
+		<script src="https://mxgo111.github.io/js/mathjax-config.js">
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_SVG-full">
+		</script>
+	</head>
+	<body>
+		<h1 class="title">
+			<a href="https://dfoiler.github.io/TIL/" class="title">
+				Today I Learned
+			</a>
+		</h1>
+		<div class="container">
+			<div class="sidebar">
+				<p style="text-align: center; font-weight: bold; margin-top: 5px;">
+					Archive
+				</p>
+				<button class="yearmenu">
+					2020
+				</button>
+				<ul class="monthmenu">
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2020/9/">
+							September 2020
+						</a>
+					</li>
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2020/10/">
+							October 2020
+						</a>
+					</li>
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2020/11/">
+							November 2020
+						</a>
+					</li>
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2020/12/">
+							December 2020
+						</a>
+					</li>
+				</ul>
+				<button class="yearmenu">
+					2021
+				</button>
+				<ul class="monthmenu">
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2021/1/">
+							January 2021
+						</a>
+					</li>
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2021/2/">
+							February 2021
+						</a>
+					</li>
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2021/3/">
+							March 2021
+						</a>
+					</li>
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2021/4/">
+							April 2021
+						</a>
+					</li>
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2021/5/">
+							May 2021
+						</a>
+					</li>
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2021/6/">
+							June 2021
+						</a>
+					</li>
+					<li>
+						<a href="https://dfoiler.github.io/TIL/2021/7/">
+							July 2021
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<p class="mobilenav">
+					<a href="../" class="link">
+						(back up to May)
+					</a>
+				</p>
+				<div class="entry">
+					<h2>
+						May 28th
+					</h2>
+					<p>
+						Today I learned some background and analogues of the near-miss identity $e^\pi-\pi\approx20,$ from
+						<a href="https://mathoverflow.net/questions/131528#comment339695_131557">
+							here
+						</a>
+						. We begin with the functional equation for $\Theta,$ which we showed a while back in the proof of the functional equation for $\zeta.$ Because it is important for the discussion, we will outline its proof.
+					</p>
+					<div class="proposition">
+						<p>
+							<b>
+								Proposition.
+							</b>
+							Let $\Theta(t):=\sum_{n\in\ZZ}e^{-\pi n^2t}.$ Then $\Theta(t)=t^{-1/2}\Theta(1/t).$
+						</p>
+					</div>
+					<p>
+						This follows from the Poisson summation formula. Namely, given (say, Shwartz) $f:\CC\to\CC,$ we can say that\[\sum_{n\in\ZZ}f(n)=\sum_{n\in\ZZ}\hat f(n).\]With this in mind, we should take $t$ constant and let $f(n):=e^{-\pi n^2t}.$ We know that the Fourier transform of $g(x)=e^{-\pi x^2}$ is itself (say, due to all of that work with Gaussians from Tate's thesis). Then\[\hat f(y)=\int_\RR e^{-\pi x^2t}e^{-2\pi ixy}\,dx=\int_\RR e^{-\pi(x\sqrt t)^2}e^{-2\pi i(x\sqrt t)(y/\sqrt t)}\,\frac{d(x\sqrt t)}{\sqrt t}\]after a change of coordinates. However, this latter integral is simply $\hat f(y)=t^{-1/2}\hat g(y/\sqrt t),$ so we see that\[\hat f(n)=t^{-1/2}e^{-\pi n^2/t}.\]Plugging into the Poisson summation formula, this collapses into\[\Theta(t)=\sum_{n\in\ZZ}e^{-\pi n^2t}=\sum_{n\in\ZZ}t^{-1/2}e^{-\pi n^2/t}=t^{-1/2}\Theta(1/t),\]which is what we wanted. $\blacksquare$
+					</p>
+					<p>
+						This is not exactly the identity we are going to use in our discussion. Instead, we look at\[\sum_{n\in\ZZ}e^{-\pi n^2t}=\sum_{n\in\ZZ}t^{-1/2}e^{-\pi n^2/t}\]and take the derivative with respect to $t$ in order to introduce $\pi$ terms outside of the exponent. We need these if we have hope of talking about $e^\pi-\pi.$ I am not going to concern myself too much with proving that $\Theta$ is in fact holomorphic over $t \gt 0,$ but it is. We get\[\sum_{n\in\ZZ}-\pi n^2e^{-\pi n^2t}=\sum_{n\in\ZZ}\left(t^{-1/2}e^{-\pi n^2/t}\cdot-\pi n^2\cdot-t^{-2}+-\frac12t^{-3/2}e^{-\pi n^2/t}\right).\]We remark here that both these sums are bounded absolutely by the geometric series $e^{-n},$ so we may rearrange as we please. (I think this also gives us uniform convergence, making the derivative safe.) There are a lot of random $t$s floating around, so now we just throw $t=1$ at the problem to make it go away. Simplifying a bit,\[\sum_{n\in\ZZ}-\pi n^2e^{-\pi n^2}=\sum_{n\in\ZZ}\left(\pi n^2e^{-\pi n^2}-\frac12e^{-\pi n^2}\right).\]At this point, we could extract the leading terms and simplify into $e^\pi-\pi\approx20,$ but we will simplify the series a bit more to be able to more easily generalize.
+					</p>
+					<p>
+						Absolute convergence lets us rearrange terms as we please, so we split up the sum into\[\sum_{n\in\ZZ}-\pi n^2e^{-\pi n^2}=\sum_{n\in\ZZ}\pi n^2e^{-\pi n^2}-\sum_{n\in\ZZ}\frac12e^{-\pi n^2},\]remark that all sums still absolutely converge (bounded by geometric series again), and we rearrange this into\[\sum_{n\in\ZZ}2\pi n^2e^{-\pi n^2}=\sum_{n\in\ZZ}\frac12e^{-\pi n^2}.\]Doubling,\[\sum_{n\in\ZZ}4\pi n^2e^{-\pi n^2}=\sum_{n\in\ZZ}e^{-\pi n^2}.\]These functions are even, so we extract $n=0$ and turn this into a sum over $n\ge1,$ which looks like\[\sum_{n=1}^\infty8\pi n^2e^{-\pi n^2}=1+\sum_{n=1}^\infty2e^{-\pi n^2}.\]We record this identity as our starting point.
+					</p>
+					<div class="lemma">
+						<p>
+							<b>
+								Lemma.
+							</b>
+							We have that    \[\sum_{n=1}^\infty\left(8\pi n^2-2\right)e^{-\pi n^2}=1.\]
+						</p>
+					</div>
+					<p>
+						This follows from the above discussion, after subtracting, which is legal by the absolute convergence. $\blacksquare$
+					</p>
+					<p>
+						Being a bit brazen, we say that this infinite series converges very fast (even faster than geometric), so we can estimate by just extracting the leading term as\[(8\pi-2)e^{-\pi}\approx1.\]Rearranging, we see $e^\pi\approx8\pi-2.$ This has a numerical error of about $0.00795.$ Then adding in the estimate $7\pi\approx22,$ which happens to move the error in the opposite direction, we get $e^\pi\approx\pi+20.$ This has an error of about $0.00090.$
+					</p>
+					<p>
+						But of course, we can include more than just the leading term to do much better. The first two terms give\[(8\pi-2)e^{-\pi}+(32\pi-2)e^{-4\pi}\approx1.\]If we want identities which look pretty, we can rearrange this into\[e^{4\pi}-(8\pi-2)e^{3\pi}\approx32\pi-2.\]The error here is $0.000033.$ Generalizing a bit, let's bound the error in general.
+					</p>
+					<div class="lemma">
+						<p>
+							<b>
+								Lemma.
+							</b>
+							We have that, for fixed $m,$    \[0 \lt 1-\sum_{n=1}^m\left(8\pi n^2-2\right)e^{-\pi n^2}-1 \lt \frac{8\pi}{\left(1-e^{-\pi}\right)^2}\cdot(m+1)^2e^{-\pi(m+1)^2}.\]
+						</p>
+					</div>
+					<p>
+						In light of the previous lemma, we are left to estimate\[E:=\sum_{n=m+1}^\infty(8\pi n-2)e^{-\pi n^2}.\]This is positive because it has all positive terms. Now, because we expect this series to very rapidly converge, most of its damage is being done by the first term. So we very brazenly bound this by a normal arithmetic-geometric series as\[E \lt 8\pi\underbrace{\sum_{n=(m+1)^2}^\infty ne^{-\pi n}}_S.\]Looking at the series alone, we can extract the leading term and then rearrange to\[S=(m+1)^2e^{-\pi(m+1)^2}+\sum_{n=(m+1)^2}(n+1)e^{-\pi n}.\]The series present in $S$ is now $e^{-\pi}S$ plus $e^{-\pi}\sum_{n=(m+1)^2}^\infty e^{-\pi n},$ which is purely geometric. Bringing everything together, our error is bounded by\[E \lt 8\pi\cdot\frac1{1-e^{-\pi}}\left((m+1)^2e^{-\pi(m+1)^2}+e^{-\pi}\cdot\frac{e^{-\pi(m+1)^2}}{1-e^{-\pi}}\right).\]Factoring things out from the complicated part, this is\[E \lt \frac{8\pi}{\left(1-e^{-\pi}\right)^2}\cdot e^{-\pi(m+1)^2}\left(\left(1-e^{-\pi}\right)(m+1)^2+e^{-\pi}\right).\]The subtraction by $e^{-\pi}(m+1)^2$ far outweighs adding $e^{-\pi},$ so we will just get rid of both to bound above as\[E \lt \frac{8\pi}{\left(1-e^{-\pi}\right)^2}\cdot(m+1)^2e^{-\pi(m+1)^2}.\]This is what we wanted. $\blacksquare$
+					</p>
+					<p>
+						Numerically, we can further bound as $\frac{8\pi}{\left(1-e^{-\pi}\right)^2} \lt 30$ by writing\[\frac{8\pi}{\left(1-e^{-\pi}\right)^2} \lt \frac{8\pi}{\left(1-2.5^{-3}\right)^2}=\frac{8\pi\cdot125^{2}}{\left(125-8\right)^2} \lt \frac{8\pi\cdot125^2}{115^2}=\frac{8\pi\cdot25^2}{23^2}.\]We want to show that this is less than $30,$ so using $\pi \lt 22/7,$ it suffices to show that $8\cdot22\cdot25^2 \lt 7\cdot23^2\cdot30.$ This simplifies to $110000 \lt 111090,$ so we are safe. For reference, the actual value is $27.454.$
+					</p>
+					<p>
+						Further, we can bound $e^{-\pi} \lt 20^{-1}$ because it is equivalent to $e^\pi \gt 20.$ We could assert that $e^\pi-\pi\approx20$ is close enough to give this inequality from the bounds above, but we'll do this directly. It is enough to show that\[\left(\frac83\right)^{3.125} \gt 20.\]The fact we're using $e \gt 8/3$ and $\pi \gt 3.125$ should be an indicator that this is somewhat sharp. Taking both sides to the $8$th power means we have to show\[8^{25} \gt 20^8\cdot3^{25}.\]The key estimate that makes this approach workable is that $3^5=243 \lt 256=2^8.$ Thus, $2^{40} \gt 3^{25},$ so it suffices to show that\[8^{25} \gt 20^8\cdot2^{40}.\]Now, $2^{10}=1024 \gt 1000=10^3$ means that $10 \lt 2^{10/3}.$ So we note that we have $75$ powers of $2$ on the left-hand side and less than $8+8\cdot10/3+40=224/3.$ So we make it by the skin of our teeth.
+					</p>
+					<p>
+						We can put this all together into the following lemma.
+					</p>
+					<div class="lemma">
+						<p>
+							<b>
+								Lemma.
+							</b>
+							We have that, for fixed $m,$    \[0 \lt 1-\sum_{n=1}^m\left(8\pi n^2-2\right)e^{-\pi n^2} \lt 30(m+1)^2\cdot20^{-(m+1)^2}.\]
+						</p>
+					</div>
+					<p>
+						This follows from plugging in the above estimates into the previous lemma. $\blacksquare$
+					</p>
+					<p>
+						We are not actually going to use the lemma directly. But we have formally proved that $(8\pi-2)e^{-\pi}\lessapprox1$ within $30\cdot4\cdot20^{-4}=0.00075.$ However, we are more interested in the error for\[e^\pi-(8\pi-2)=e^\pi\left(1-(8\pi-2)e^{-\pi}\right) \lt e^\pi\cdot30\cdot4\cdot e^{-4\pi}.\]So our error bound here is $120e^{-3\pi} \lt 120/20^3=0.015.$ The actual error $0.00795,$ so our estimates were fairly good.
+					</p>
+					<p>
+						We note that we in fact know $e^\pi$ is greater ($(8\pi-2)e^{-\pi} \lt 1$), so we are allowed to subtract the error from substituting $7\pi\lessapprox22$ (roughly speaking), so the total error for $e^\pi\lessapprox\pi+20$ is still bounded by $0.015.$ The actual error is about two orders of magnitude less than this, but I think it is a numerical coincidence that the $7\pi\lessapprox22$ error is pretty close to the $e^\pi\gtrapprox8\pi-2$ error.
+					</p>
+					<p>
+						As an aside, we remark that knowing $e^\pi\approx8\pi-2$ within $0.015$ can actually beef up our estimate $e^{-\pi} \lt 20^{-1},$ but we will continue using $20$ because it makes the base-$10$ decimals look prettier.
+					</p>
+					<p>
+						Anyways, the real reason we have done this is to be able to say the error of\[(8\pi-2)e^{-\pi}+(32\pi-2)e^{-4\pi}\lessapprox1\]is within $30\cdot9\cdot20^{-9}=27\cdot2^{-9}\cdot10^{-8}.$ If we say $\frac{27}{2^9} \lt \frac{32}{2^9}=\frac1{16},$ then the error is within $6.25\cdot10^{-10}.$ The actual error is $1.17\cdot10^{-10},$ so we're still doing okay. As we add more terms, we'll do worse by the nature of our estimates, but it rapidly goes to $0$ anyways.
+					</p>
+					<p>
+						For the prettier identity multiplied by $e^{4\pi},$ we'll just do the general case.
+					</p>
+					<div class="proposition">
+						<p>
+							<b>
+								Proposition.
+							</b>
+							We have that, for fixed $m,$    \[0 \lt e^{m^2\pi}-\sum_{n=1}^m\left(8\pi n^2-2\right)e^{\left(m^2-n^2\right)\pi} \lt 30(m+1)^2\cdot20^{-(2m+1)}.\]
+						</p>
+					</div>
+					<p>
+						Factoring out $e^{m^2\pi},$ we have to bound\[e^{m^2\pi}\left(1-\sum_{n=1}^m\left(8\pi n^2-2\right)e^{-\pi n^2}\right).\]Our main bounding lemma now finishes: this is surely positive, and we can upper-bound the error by\[e^{\pi m^2}\cdot\frac{8\pi}{\left(1-e^{-\pi}\right)^2}\cdot(m+1)^2e^{-\pi(m+1)^2}.\]The exponent of $e^{-\pi}$ turns into $e^{-\pi(2m+1)}$ because $(m+1)^2-m^2=2m+1.$ Now we are done by plugging our estimates for $\frac{8\pi}{\left(1-e^{-\pi}\right)^2}$ and $e^{-\pi}.$ $\blacksquare$
+					</p>
+					<p>
+						Thus, we can say that the error of\[e^{4\pi}-(8\pi-2)e^{3\pi}\lessapprox32\pi-2\]is within $30\cdot9\cdot20^{-5}=\frac{27}{2^5}\cdot10^{-4} \lt 10^{-4}$; the actual error is roughly $0.000034.$ This is pretty good, and we know that the error will decrease exponentially (roughly) as we add more terms to these identities, which is doubly impressive considering that the numbers in the identifies are getting larger.
+					</p>
+				</div>
+			</div>
+		</div>
+		<script src="https://dfoiler.github.io/js/sidebar.js">
+		</script>
+	</body>
+</html>

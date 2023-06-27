@@ -1,0 +1,29 @@
+/* latex environments */
+.theorem, .lemma, .proposition, .definition, .example, .idea
+{
+	border: 2px solid;
+	padding-top: 7.5pt;
+	padding-bottom: 3.75pt;
+	padding-right: 8.25pt;
+	padding-left: 8.25pt;
+	border-radius: 6.75pt;
+	margin-bottom: 6pt;
+}
+
+.theorem, .lemma, .proposition
+{
+	background: #e1fafa;
+	border-color: #00a0ff;
+}
+
+.definition, .example
+{
+	background: #e6ffea;
+	border-color: #3c6e3c;
+}
+
+.idea
+{
+	background: #fadcdc;
+	border-color: red;
+}

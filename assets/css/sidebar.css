@@ -1,0 +1,107 @@
+/* goes around all content below the title */
+.container
+{
+	background: #f7f9ff;
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 0.001em;
+	max-width: 712.5pt;
+}
+
+/* goes around all of the archive */
+.sidebar
+{
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	padding-top: 4.5pt;
+	padding-bottom: 3.75pt;
+	padding-right: 8.25pt;
+	padding-left: 8.25pt;
+	width: 103.5pt;
+	float: right;
+	overflow: auto;
+}
+
+/* one of the year entries in the archive */
+.yearmenu
+{
+	border: none;
+	outline: none;
+	background: none;
+	color: #303030;
+	font-size: 13pt;
+	padding: 0;
+	margin-top: 2.25pt;
+	margin-bottom: 0;
+	display: block;
+	cursor: pointer;
+}
+
+/* we want it to look like a link */
+.yearmenu:hover
+{
+	color: #003080;
+}
+
+/* one of the month entries in the archive */
+.monthmenu
+{
+	display: none;
+	padding-left: 15pt;
+	margin-top: 0;
+	margin-bottom: 6pt;
+}
+
+/* links (month entries) in the archive */
+.sidebar a
+{
+	color: #303030;
+	font-size: 11pt;
+	padding: 0;
+	margin-bottom: 1.5pt;
+	display: block;
+	text-decoration: none;
+}
+
+.sidebar a:hover
+{
+	color: #003080;
+}
+
+/* messages going up the tree for small screens */
+.mobilenav
+{
+	display: none;
+	margin-top: 0;
+}
+
+/* content apart from the sidebar */
+.content
+{
+	background: #fcfdff; 
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-right: 116.75pt;
+	overflow: auto;
+}
+
+/* small screens and mobile */
+@media screen and (max-width: 600pt)
+{
+	/* get rid of the sidebar */
+	.sidebar
+	{
+		display: none;
+	}
+	/* add in the crude navigation */
+	.mobilenav
+	{
+		display: block;
+	}
+	.content
+	{
+		margin-right: 0;
+	}
+}
