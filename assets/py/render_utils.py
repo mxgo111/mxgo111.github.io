@@ -13,10 +13,10 @@ def generate_nav_html(name):
         "<a href=\"https://www.maximillianguo.com/courses.html\">Courses</a>",
         "<a href=\"https://www.maximillianguo.com/til/index.html\">TIL</a>"
     ]
-    nav_list_html = []
+    nav_list_html = ["\n"]
     for i, item in enumerate(list_items):
         if i == idx:
-            nav_list_html.append(f"""<li class="current">{item}</li>""")
+            nav_list_html.append(f"""<li class="current">{item}</li>\n""")
         else:
             nav_list_html.append(f"""<li>{item}</li>\n""")
     return f"""

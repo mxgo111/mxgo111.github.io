@@ -35,7 +35,6 @@ ALL_YEAR_MONTH_DAYS = []
 
 # iterate through years that exist in directory
 for folder_year in os.listdir(til_html_directory):
-    print(folder_year)
     folder_year_path = os.path.join(til_html_directory, folder_year)
     if os.path.isfile(folder_year_path):
         continue
@@ -52,9 +51,6 @@ for folder_year in os.listdir(til_html_directory):
                 continue
             list_of_folder_day_paths.append(folder_day_path)
             ALL_YEAR_MONTH_DAYS.append((int(folder_year), int(folder_month), int(folder_day)))
-
-print(ALL_YEAR_MONTHS)
-print(ALL_YEAR_MONTH_DAYS)
 
 # read paths
 def generate_month_summary_path(year_month):
@@ -144,7 +140,7 @@ def generate_day_html(year_month_day):
                                         <!-- Content -->
                                             <article>
 
-                                                <h2>{MONTHS[month]} {day}, {year}</h2>
+                                                <h3>{MONTHS[month]} {day}, {year}</h3></br>
 
                                                 {content}
 
@@ -184,7 +180,7 @@ def generate_month_html(year_month):
             day_summary_path = generate_day_summary_path((year, month, day))
             with open(day_summary_path, "r") as file:
                 day_summary = file.read()
-            list_of_day_summaries_html.append(f"<a href=\"https://www.maximillianguo.com/til/{year}/{month}/{day}/index.html\"><h3>{MONTHS[month]} {day}, {year}</h3></a>\n <p>{day_summary}</p>\n")
+            list_of_day_summaries_html.append(f"<a href=\"https://www.maximillianguo.com/til/{year}/{month}/{day}/index.html\"><h4>{MONTHS[month]} {day}, {year}</h4></a>\n <p>{day_summary}</p>\n")
     
     return f"""
     <!DOCTYPE HTML>
@@ -210,7 +206,7 @@ def generate_month_html(year_month):
                                         <!-- Content -->
                                             <article>
 
-                                                <h2>{MONTHS[month]} {year}</h2>
+                                                <h3>{MONTHS[month]} {year}</h3>
                                                 <p>{month_summary}</p>
 
                                                 {"".join(list_of_day_summaries_html)}
@@ -270,8 +266,11 @@ def generate_home_html():
 
                                         <!-- Content -->
                                             <article>
+                                            <p>
+                                            TIL (Today I Learned) is my attempt to document, mostly for personal learning reasons, anything economics-adjacent that I learned that day.
+                                            </p>
 
-                                                {"".join(list_of_month_summaries_html)}
+                                            {"".join(list_of_month_summaries_html)}
 
                                             </article>
 
