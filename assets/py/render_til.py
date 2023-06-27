@@ -82,7 +82,7 @@ def generate_sidebar_list():
     sidebar_list_html = []
     for year_month in ALL_YEAR_MONTHS:
         year, month = year_month
-        list_item_html = f"<li><a href=\"https://www.maximillianguo.com/til/{year}/{month}/index.html\">{MONTHS[month]}, {year}</a></li>"
+        list_item_html = f"<li><a href=\"https://www.maximillianguo.com/til/{year}/{month}/index.html\">{MONTHS[month]} {year}</a></li>"
         sidebar_list_html.append(list_item_html)
     return "\n".join(sidebar_list_html[-10:])
 
@@ -241,7 +241,7 @@ def generate_home_html():
         month_summary_path = generate_month_summary_path((year, month))
         with open(month_summary_path, "r") as file:
             month_summary = file.read()
-        list_of_month_summaries_html.append(f"<a href=\"https://www.maximillianguo.com/til/{year}/{month}/index.html\"><h3>{MONTHS[month]}, {year}</h3></a>\n <p>{month_summary}</p>")
+        list_of_month_summaries_html.append(f"<a href=\"https://www.maximillianguo.com/til/{year}/{month}/index.html\"><h3>{MONTHS[month]} {year}</h3></a>\n <p>{month_summary}</p>")
     
     return f"""
     <!DOCTYPE HTML>
