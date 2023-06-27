@@ -140,7 +140,7 @@ def generate_day_html(year_month_day):
                                         <!-- Content -->
                                             <article>
 
-                                                <h3>{MONTHS[month]} {day}, {year}</h3></br>
+                                                <h3>{MONTHS[month]} {day}, {year}</h3>
 
                                                 {content}
 
