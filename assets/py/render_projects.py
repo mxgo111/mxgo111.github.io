@@ -1,4 +1,7 @@
+from render_utils import *
 
+def generate_projects_html():
+    projects_html = f"""
     <!DOCTYPE HTML>
     <!--
         Verti by HTML5 UP
@@ -6,53 +9,11 @@
         Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
     -->
     <html>
-        
-    <head>
-        <title>Max Guo's Website</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="https://www.maximillianguo.com/assets/css/main.css" />
-        
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-        </script>
-        <script type="text/javascript"
-            src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-        </script>
-
-    </head>
-    
+        {generate_head_html()}
         <body class="is-preload homepage">
             <div id="page-wrapper">
 
-                
-    <!-- Header -->
-        <div id="header-wrapper">
-            <header id="header" class="container">
-
-                
-    <!-- Logo -->
-        <div id="logo">
-            <h1><a href="https://www.maximillianguo.com/index.html">Maximillian Guo</a></h1>
-        </div>
-    
-
-                
-    <!-- Nav -->
-        <nav id="nav">
-            <ul>
-                <li><a href="https://www.maximillianguo.com/index.html">About Me</a></li>
-<li class="current"><a href="https://www.maximillianguo.com/projects.html">Projects</a></li><li><a href="https://www.maximillianguo.com/resume.html">Resume</a></li>
-<li><a href="https://www.maximillianguo.com/courses.html">Courses</a></li>
-<li><a href="https://www.maximillianguo.com/til/index.html">TIL</a></li>
-
-            </ul>
-        </nav>
-    
-
-            </header>
-        </div>
-    
+                {generate_header_html("projects")}
 
                 <!-- Main -->
 				<div id="main-wrapper">
@@ -108,34 +69,12 @@
 					</div>
 				</div>
 
-                
-    <!-- Footer -->
-        <div id="footer-wrapper">
-            <footer id="footer" class="container">
-                <!-- <div class="row"> -->
-                    <div class="col-12">
-                        <div id="copyright">
-                            <ul class="menu">
-                                <li>&copy; 2022 Maximillian Guo </li>
-                                <li>Hosted on GitHub Pages</li>
-                                <li>Design: <a href="http://html5up.net">HTML5 UP (Verti)</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                <!-- </div> -->
-            </footer>
-        </div>
-    
+                {generate_footer_html()}
 
-                
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    
+                {generate_scripts_html()}
 
         </body>
     </html>
-    
+    """
+
+    return projects_html
