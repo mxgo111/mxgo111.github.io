@@ -293,3 +293,5 @@ def generate_home_html():
 home_index_path = generate_home_index_path()
 with open(home_index_path, "w") as file:
     file.write(generate_home_html())
+
+print("Render TIL Complete")
