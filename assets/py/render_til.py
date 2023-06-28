@@ -180,7 +180,7 @@ def generate_month_html(year_month):
             day_summary_path = generate_day_summary_path((year, month, day))
             with open(day_summary_path, "r") as file:
                 day_summary = file.read()
-            list_of_day_summaries_html.append(f"<a href=\"https://www.maximillianguo.com/til/{year}/{month}/{day}/index.html\"><h4>{MONTHS[month]} {day}, {year}</h4></a>\n <p>{day_summary}</p>\n")
+            list_of_day_summaries_html.append(f"<a href=\"https://www.maximillianguo.com/til/{year}/{month}/{day}/index.html\"><h4>{MONTHS[month]} {day}, {year}</h4></a>\n <p>{day_summary} <em><a href=\"https://www.maximillianguo.com/til/{year}/{month}/{day}/index.html\">(continue reading)</a></em></p>\n")
     
     return f"""
     <!DOCTYPE HTML>
