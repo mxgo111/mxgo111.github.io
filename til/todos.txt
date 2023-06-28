@@ -5,4 +5,3 @@ List of Topics to cover in the future:
 - Sharpe Ratio / Information Ratio (https://analystprep.com/study-notes/cfa-level-2/explain-how-the-information-ratio-may-be-useful-in-investment-manager-selection-and-choosing-the-level-of-active-portfolio-risk/)
 - GCAP Written Testimony by Jesse Schreger on International Financial Institutions in an Era of Great Power Competition
 - GCAP papers
-- test todo
