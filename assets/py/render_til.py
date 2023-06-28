@@ -6,7 +6,7 @@ MONTHS = [
     None, "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
 ]
 
-py_path = os.getcwd()
+py_path = os.path.dirname(os.path.realpath(__file__))
 til_directory = os.path.join((Path(py_path).parent.parent.absolute()), "til")
 til_html_directory = os.path.join((Path(py_path).parent.parent.absolute()), "til-html")
 
